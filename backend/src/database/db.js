@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongodbUri = `mongodb://@ds127843.mlab.com:27843/omnistack`;
-const config = require("../config.json");
+const config = require("../config.js");
 
 mongoose.connect(mongodbUri, {
     useNewUrlParser: true,
