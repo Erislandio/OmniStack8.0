@@ -3,6 +3,9 @@ const server = express();
 const routes = require("./routes");
 const PORT = 3000;
 const mongoose = require("./database/db");
+const CORS = require("cors");
+
+server.use(CORS());
 
 server.use(express.json());
 server.use(routes);
