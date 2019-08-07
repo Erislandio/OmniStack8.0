@@ -34,9 +34,33 @@ module.exports = {
 
     async index(req, res) {
         try {
-            const devs = await Dev.find();
+            const {
+                headers: { user }
+            } = req;
 
-            return res.status(200).send(devs);
+            const loggedUser = await Dev.findById(user);
+
+            const users = await Dev.find({
+                $and: [
+                    {
+                        _id: {
+                            $ne: user
+                        }
+                    },
+                    {
+                        _id: {
+                            $nin: loggedUser.likes
+                        }
+                    },
+                    {
+                        _id: {
+                            $nin: loggedUser.deslikes
+                        }
+                    }
+                ]
+            });
+
+            return res.status(200).send(users);
         } catch (error) {
             return res.status(500).send({
                 error
