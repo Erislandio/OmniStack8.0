@@ -32,7 +32,7 @@ module.exports = {
         }
     },
 
-    async list(req, res) {
+    async index(req, res) {
         try {
             const devs = await Dev.find();
 
