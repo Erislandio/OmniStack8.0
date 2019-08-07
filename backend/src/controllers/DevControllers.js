@@ -1,10 +1,23 @@
 const Dev = require("../models/Dev");
+const axios = require("axios");
 
 module.exports = {
     async store(req, res) {
-        const { body } = req;
+        const {
+            body: { username }
+        } = req;
+
         try {
-            const dev = await Dev.create(body);
+            const {
+                data: { bio, avatar_url, name }
+            } = await axios.get(`https://api.github.com/users/${username}`);
+
+            const dev = await Dev.create({
+                name,
+                user: username,
+                bio,
+                avatar: avatar_url
+            });
 
             return res.status(200).send(dev);
         } catch (error) {
