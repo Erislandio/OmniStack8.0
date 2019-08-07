@@ -23,3 +23,11 @@
 ## Controllers
 
 -   DevController ==> salvar as configurações no banco de dados mlab - mongodb
+
+## controllers methods
+
+-   INDEX
+-   SHOW
+-   STORE
+-   UPDATE
+-   DELETE
