@@ -8,6 +8,11 @@ module.exports = {
         } = req;
 
         try {
+            const userExists = await Dev.findOne({ user: username });
+            if (userExists) {
+                return res.status(200).send(userExists);
+            }
+
             const {
                 data: { bio, avatar_url, name }
             } = await axios.get(`https://api.github.com/users/${username}`);
