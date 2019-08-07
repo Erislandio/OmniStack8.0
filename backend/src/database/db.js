@@ -4,7 +4,7 @@ const config = require("../config.js");
 
 mongoose.connect(mongodbUri, {
     useNewUrlParser: true,
-    config
+    ...config
 });
 const conn = mongoose.connection;
 conn.on("error", console.error.bind(console, "Erro!:"));
