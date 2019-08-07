@@ -2,18 +2,24 @@
 
 ## Ferramentas e tecnologias
 
-- NODE
-- ReactJs
-- Express
-- MongoDb
-- Mongoose 
-- Yarn 
+-   NODE
+-   ReactJs
+-   Express
+-   MongoDb
+-   Mongoose
+-   Yarn
 
-## API REST 
+## API REST
 
-- GET
-- POST
-- DELETE
-- PUT
+-   GET
+-   POST
+-   DELETE
+-   PUT
 
+## Database (mongoose) - mlab
 
+-   Dev table (name, user, bio, avatar)
+
+## Controllers
+
+-   DevController ==> salvar as configurações no banco de dados mlab - mongodb
