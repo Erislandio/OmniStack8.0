@@ -9,6 +9,11 @@
 - Mongoose 
 - Yarn 
 
+## API REST 
 
+- GET
+- POST
+- DELETE
+- PUT
 
 
