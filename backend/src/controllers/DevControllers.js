@@ -12,5 +12,17 @@ module.exports = {
                 error
             });
         }
+    },
+
+    async list(req, res) {
+        try {
+            const devs = await Dev.find();
+
+            return res.status(200).send(devs);
+        } catch (error) {
+            return res.status(500).send({
+                error
+            });
+        }
     }
 };
